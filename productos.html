@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Productos - Delicias Dulces</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    body { font-family: 'Segoe UI', sans-serif; background-color: #fff5f8; color: #4b2e2e; margin: 0; padding: 20px; }
+    h1 { color: #d94f70; }
+    h2 { color: #bb3e5a; }
+    ul { padding-left: 1.5em; }
+    a { color: #8b0000; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header, footer { background-color: #f8d7da; padding: 10px; text-align: center; }
+  
+    .anuncio {
+      margin-top: 30px;
+      padding: 15px;
+      background: #fff0f5;
+      border: 2px dashed #d94f70;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+    .anuncio img {
+      width: 200px;
+      border-radius: 12px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .anuncio img:hover {
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Nuestros Productos</h1>
+  <p>En Delicias Dulces nos especializamos en una variedad de productos artesanales, hechos con ingredientes frescos y mucho amor.</p>
+
+  
+
+  <div id="comprador" style="margin-top: 30px;">
+    <h2 style="color: #bb3e5a;">Nuestros Productos</h2>
+    <p>En Delicias Dulces ofrecemos una variedad de postres artesanales, incluyendo pasteles personalizados, cupcakes, galletas decoradas y postres fríos. Cada uno está pensado para brindar dulzura, calidad y un diseño que refleja cariño y creatividad.</p>
+
+    <h3 style="color: #d94f70;">Proceso de creación</h3>
+    <p>Elaboramos nuestros productos desde cero utilizando ingredientes frescos. Cada pastel es diseñado a mano, se hornea con recetas tradicionales y se decora con detalle según la ocasión del cliente.</p>
+
+    <h3 style="color: #d94f70;">Ingredientes</h3>
+    <p>Utilizamos mantequilla real, harina integral, huevos orgánicos, frutas frescas y decoraciones naturales. Nos aseguramos de mantener un estándar saludable y delicioso para nuestros clientes.</p>
+
+    <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+      <img src="producto1.jpg" alt="Pastel decorado" style="width: 200px; border-radius: 12px;">
+      <img src="producto2.jpg" alt="Cupcake artesanal" style="width: 200px; border-radius: 12px;">
+    </div>
+  </div>
+
+<h2>Galería de Productos</h2>
+  <p>A continuación puedes ver algunos ejemplos:</p>
+  <img src="ruta-a-imagen1.jpg" alt="Pastel de Chocolate" width="300">
+  <img src="ruta-a-imagen2.jpg" alt="Cupcakes decorados" width="300">
+  <img src="ruta-a-imagen3.jpg" alt="Tarta de frutas" width="300">
+
+  <h2>Productos más pedidos</h2>
+  <canvas id="chartProductos" width="400" height="200"></canvas>
+  <script>
+    const ctx = document.getElementById('chartProductos').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Pastel de Chocolate', 'Cupcakes', 'Tarta de Frutas', 'Galletas Decoradas', 'Cheesecake'],
+        datasets: [{
+          label: 'Cantidad Vendida',
+          data: [120, 90, 70, 50, 60],
+          backgroundColor: ['#d2691e', '#ff69b4', '#ffa07a', '#deb887', '#ffcccb'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+
+  <br>
+  <a href="index.html">Volver al índice</a>
+</body>
+</html>
